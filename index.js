@@ -10,6 +10,10 @@ app.use(express.urlencoded())
 
 let port = process.env.PORT || 3000
 
+app.get('/', (req, res) => {
+    return res.send('Hello')
+})
+
 app.post('/getData', (req, res) => {
     let url = `${process.env.BASE_PATH}${req.body.path}?api_key=${process.env.API_KEY}`
     console.log('body', req.body)
