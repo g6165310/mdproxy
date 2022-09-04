@@ -16,7 +16,6 @@ app.get('/', (req, res) => {
 
 app.post('/getData', (req, res) => {
     let url = `${process.env.BASE_PATH}${req.body.path}?api_key=${process.env.API_KEY}`
-    console.log('body', req.body)
     if (req.body.page) {
         url = url + `&page=${req.body.page}`
     }
